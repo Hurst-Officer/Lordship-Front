@@ -1,0 +1,27 @@
+.appbar{
+  position:fixed; top:0; left:0; right:0; height:var(--appbar-h); z-index:100;
+  display:grid; grid-template-columns:1fr minmax(280px,500px) 1fr; align-items:center; gap:16px;
+  padding:0 20px;
+  background:color-mix(in srgb, var(--panel) 92%, transparent);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  border-bottom:1.5px solid var(--line);
+}
+
+.appbar-right{display:flex; justify-content:flex-end; gap:10px; align-items:center;}
+
+.theme-toggle{
+  font-family:'Bricolage Grotesque',sans-serif; font-size:12px; font-weight:600; letter-spacing:.14em;
+  padding:8px 16px; border:1.5px solid var(--line); background:var(--panel-2);
+  text-transform:uppercase; border-radius:999px;
+}
+.theme-toggle:hover{border-color:var(--sig); color:var(--sig);}
+
+.wordmark .title{
+  font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:13px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--muted); white-space:nowrap;
+}
+
+@media (max-width:900px){
+  .appbar{grid-template-columns:auto 1fr auto; gap:10px;}
+  .wordmark .title{display:none;}
+}

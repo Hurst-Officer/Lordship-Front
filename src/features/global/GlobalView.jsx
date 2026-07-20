@@ -11,6 +11,9 @@ export default function GlobalView() {
 			<button onClick={() => setLens({concern : 'payments'})}>
 				Switch to payments
 			</button>
+			<button onClick={() => setLens({concern : 'invoicing'})}>
+				Switch to invoicing
+			</button>
 		</div>
 	);
 }

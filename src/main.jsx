@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { AuthProvider } from './app/AuthContext.jsx';
 
 import '@fontsource/bricolage-grotesque/600.css';
 import '@fontsource/bricolage-grotesque/700.css';
@@ -14,6 +15,8 @@ import App from './app/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </StrictMode>,
 )

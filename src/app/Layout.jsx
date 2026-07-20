@@ -1,14 +1,13 @@
 
 import {Outlet, Link} from 'react-router-dom';
 import LensLink from '../shared/LensLink';
+import AppBar from './AppBar';
 
 export default function Layout() {
 	return (
 		<div>
 			<header>
-				<LensLink to="/">Global</LensLink>{' '}
-				<LensLink to="/properties/TA">Tazing Acres</LensLink>{' '}
-				<span style={{float : 'right'}}>[profile] [theme]</span>
+				<AppBar />
 			</header>
 			<main>
 				<Outlet />

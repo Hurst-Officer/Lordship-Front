@@ -1,0 +1,86 @@
+:root{
+  --appbar-h:62px;  /* height of app bar */
+  --chrome-h:calc(var(--appbar-h));
+  --r:18px;       /* panel radius */
+  --r-s:10px;     /* small radius */
+}
+
+:root, [data-theme="day"]{
+  --paper:   #F3F0E6;   /* warm linen */
+  --panel:   #FBF9F1;
+  --panel-2: #EFEBDD;
+  --ink:     #2F3A30;   /* forest ink — deep but never black */
+  --muted:   #6E7B69;
+  --faint:   #99A491;
+  --line:    #D8D4C1;
+  --line-soft:#E8E4D3;
+  --hover:   rgba(47,58,48,.05);
+  --band:    rgba(47,58,48,.03);
+
+  --sig:     #4A7A5A;   /* fern — selection, interaction, "now" */
+  --red:     #B25A40;   /* terracotta — attention without alarm */
+  --amber:   #A6832F;   /* honey — notes */
+  --wtr:     #4E7F96;   /* lake — water flag */
+
+  --sig-tint:rgba(74,122,90,.10);
+  --sig-sel: rgba(74,122,90,.18);
+  --amber-tint:rgba(166,131,47,.10);
+  --util-tint:rgba(78,127,150,.06);
+  --acct-tint:rgba(74,122,90,.07);
+  --sys-tint:rgba(166,131,47,.07);
+  --pick:    rgba(166,131,47,.17);
+
+  --shadow:  0 2px 4px rgba(51,61,45,.05), 0 18px 44px rgba(51,61,45,.09);
+  --t-OOC:#5C7F9B; --t-REN:#8B7BA6; --t-RCC:#A98E4B; --t-REC:#BB7A5B; --t-VAC:#98A38F;
+}
+
+[data-theme="night"]{
+  /* grove evening - warm, low-blue, never pure black */
+  --paper:   #20251C;
+  --panel:   #2A3024;
+  --panel-2: #242A1F;
+  --ink:     #EAE5D2;
+  --muted:   #ADB59B;
+  --faint:   #7F8871;
+  --line:    #434C39;
+  --line-soft:#353D2D;
+  --hover:   rgba(234,229,210,.05);
+  --band:    rgba(234,229,210,.03);
+
+  --sig:     #96C79B;
+  --red:     #E29A7E;
+  --amber:   #DDBA6A;
+  --wtr:     #8FC0CE;
+
+  --sig-tint:rgba(150,199,155,.10);
+  --sig-sel: rgba(150,199,155,.18);
+  --amber-tint:rgba(221,186,106,.10);
+  --util-tint:rgba(143,192,206,.07);
+  --acct-tint:rgba(150,199,155,.07);
+  --sys-tint:rgba(221,186,106,.07);
+  --pick:    rgba(221,186,106,.17);
+
+  --shadow:  0 20px 50px rgba(8,12,6,.5);
+  --t-OOC:#8FB2CC; --t-REN:#B3A3D1; --t-RCC:#CDB271; --t-REC:#D69B7C; --t-VAC:#7E8871;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer;}
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Atkinson Hyperlegible',system-ui,sans-serif;
+  font-size:14.5px; line-height:1.55;
+  padding-top:var(--appbar-h);
+  transition:background .3s ease, color .3s ease;
+}
+/* soft light through leaves, not a grid */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 12% -8%, color-mix(in srgb, var(--sig) 8%, transparent), transparent 70%),
+    radial-gradient(1000px 700px at 92% 108%, color-mix(in srgb, var(--wtr) 7%, transparent), transparent 70%);
+}
+
